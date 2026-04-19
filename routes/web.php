@@ -74,3 +74,6 @@ Route::get('/forms/file-upload', [FormController::class, 'fileUpload'])->name('f
 // ---- Maps ----
 Route::get('/maps/leaflet', [MapController::class, 'leaflet'])->name('maps.leaflet');
 Route::get('/maps/vector', [MapController::class, 'vector'])->name('maps.vector');
+
+
+Route::get('/teste',[TesteController::class,'index'])->name('teste.index');
