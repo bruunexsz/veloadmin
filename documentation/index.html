@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VeloAdmin Documentation</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif;font-size:.9rem}
+.doc-sidebar{position:fixed;top:0;left:0;bottom:0;width:260px;background:#0f172a;overflow-y:auto;padding:24px 0}
+.doc-sidebar .brand{color:#fff;font-size:1.25rem;font-weight:700;padding:0 24px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:16px}
+.doc-sidebar .brand span{color:#6366f1}
+.doc-sidebar a{display:block;color:#94a3b8;padding:7px 24px;font-size:.8125rem;transition:all .2s}
+.doc-sidebar a:hover,.doc-sidebar a.active{color:#6366f1;text-decoration:none}
+.doc-sidebar .nav-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:#475569;padding:12px 24px 4px;font-weight:600}
+.doc-main{margin-left:260px;padding:40px;max-width:960px}
+.doc-section{margin-bottom:60px}
+.doc-section h2{font-size:1.5rem;font-weight:700;color:#0f172a;border-bottom:2px solid #6366f1;padding-bottom:8px;margin-bottom:20px}
+.doc-section h3{font-size:1.1rem;font-weight:600;margin-top:24px;margin-bottom:12px;color:#1e293b}
+pre{background:#0f172a;color:#e2e8f0;padding:20px;border-radius:10px;overflow-x:auto;font-size:.8125rem}
+code:not(pre code){background:#f1f5f9;color:#6366f1;padding:2px 6px;border-radius:4px;font-size:.8125rem}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0}
+.feature-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;display:flex;align-items:center;gap:10px;font-size:.8125rem}
+.feature-item i{color:#6366f1;font-size:1.1rem}
+.badge-tech{background:#ede9fe;color:#6366f1;padding:4px 10px;border-radius:6px;font-size:.75rem;font-weight:600;margin:2px}
+table th{background:#f8fafc;font-weight:600;font-size:.8125rem}
+table td,table th{padding:10px 14px;font-size:.8125rem}
+</style>
+</head>
+<body>
+<!-- Sidebar -->
+<div class="doc-sidebar">
+    <div class="brand">Velo<span>Admin</span> <small style="font-size:.65rem;color:#475569">v1.0</small></div>
+    <div class="nav-label">Getting Started</div>
+    <a href="#introduction" class="active">Introduction</a>
+    <a href="#requirements">Requirements</a>
+    <a href="#installation">Installation</a>
+    <a href="#structure">Folder Structure</a>
+    <div class="nav-label">Customization</div>
+    <a href="#theming">Theming & Colors</a>
+    <a href="#dark-mode">Dark Mode</a>
+    <a href="#sidebar">Sidebar</a>
+    <div class="nav-label">Pages</div>
+    <a href="#dashboards">Dashboards</a>
+    <a href="#auth-pages">Auth Pages</a>
+    <a href="#app-pages">App Pages</a>
+    <a href="#components">UI Components</a>
+    <a href="#charts">Charts</a>
+    <a href="#tables">Tables</a>
+    <a href="#forms">Forms</a>
+    <a href="#maps">Maps</a>
+    <div class="nav-label">Reference</div>
+    <a href="#third-party">Third-Party Libs</a>
+    <a href="#credits">Credits</a>
+    <a href="#changelog">Changelog</a>
+</div>
+
+<!-- Main Content -->
+<div class="doc-main">
+
+    <!-- Introduction -->
+    <div class="doc-section" id="introduction">
+        <h2><i class="bi bi-lightning-charge-fill text-primary me-2"></i>Introduction</h2>
+        <p>Welcome to <strong>VeloAdmin</strong> — a premium, full-featured admin dashboard template built with <strong>Laravel 12</strong> and <strong>Bootstrap 5.3</strong>. It includes everything you need to build a professional admin panel fast.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+            <span class="badge-tech">Laravel 12</span><span class="badge-tech">Bootstrap 5.3</span><span class="badge-tech">ApexCharts</span><span class="badge-tech">DataTables</span><span class="badge-tech">Leaflet.js</span><span class="badge-tech">Dropzone.js</span><span class="badge-tech">Vite</span>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-item"><i class="bi bi-grid-1x2"></i>3 Dashboards</div>
+            <div class="feature-item"><i class="bi bi-moon-stars"></i>Dark / Light Mode</div>
+            <div class="feature-item"><i class="bi bi-phone"></i>Fully Responsive</div>
+            <div class="feature-item"><i class="bi bi-bar-chart-line"></i>ApexCharts</div>
+            <div class="feature-item"><i class="bi bi-table"></i>DataTables + Export</div>
+            <div class="feature-item"><i class="bi bi-geo-alt"></i>Leaflet & Vector Maps</div>
+            <div class="feature-item"><i class="bi bi-cloud-arrow-up"></i>Drag & Drop Upload</div>
+            <div class="feature-item"><i class="bi bi-receipt"></i>Invoice + Print</div>
+            <div class="feature-item"><i class="bi bi-shield-lock"></i>Auth Pages</div>
+            <div class="feature-item"><i class="bi bi-envelope"></i>Email Templates</div>
+            <div class="feature-item"><i class="bi bi-layers"></i>40+ UI Components</div>
+            <div class="feature-item"><i class="bi bi-gift"></i>Free Updates</div>
+        </div>
+    </div>
+
+    <!-- Requirements -->
+    <div class="doc-section" id="requirements">
+        <h2><i class="bi bi-check2-square text-primary me-2"></i>Requirements</h2>
+        <table class="table table-bordered">
+            <thead><tr><th>Requirement</th><th>Minimum Version</th><th>Recommended</th></tr></thead>
+            <tbody>
+                <tr><td>PHP</td><td>8.2</td><td>8.2+</td></tr>
+                <tr><td>Laravel</td><td>12.x</td><td>12.x</td></tr>
+                <tr><td>Node.js</td><td>20.x</td><td>20.x LTS</td></tr>
+                <tr><td>Composer</td><td>2.x</td><td>Latest</td></tr>
+                <tr><td>npm</td><td>9.x</td><td>Latest</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Installation -->
+    <div class="doc-section" id="installation">
+        <h2><i class="bi bi-terminal text-primary me-2"></i>Installation</h2>
+        <h3>Step 1 — Install PHP Dependencies</h3>
+        <pre>composer install</pre>
+        <h3>Step 2 — Environment Setup</h3>
+        <pre>cp .env.example .env
+php artisan key:generate</pre>
+        <h3>Step 3 — Install NPM Dependencies &amp; Build Assets</h3>
+        <pre>npm install
+npm run build</pre>
+        <h3>Step 4 — Start Development Server</h3>
+        <pre>php artisan serve</pre>
+        <p>Open <code>http://127.0.0.1:8000</code> in your browser. You should see the Sales Dashboard.</p>
+        <h3>Step 5 — Development with Hot Reload (Optional)</h3>
+        <pre>npm run dev</pre>
+        <div class="alert alert-info"><i class="bi bi-info-circle me-2"></i><strong>Note:</strong> No database is required. VeloAdmin is a frontend template — all data is static.</div>
+    </div>
+
+    <!-- Folder Structure -->
+    <div class="doc-section" id="structure">
+        <h2><i class="bi bi-folder2-open text-primary me-2"></i>Folder Structure</h2>
+        <pre>evanto/
+├── app/Http/Controllers/   # Thin controllers returning views
+├── resources/
+│   ├── views/
+│   │   ├── layouts/        # app.blade.php, auth.blade.php
+│   │   ├── partials/       # sidebar, topbar, footer
+│   │   ├── dashboard/      # sales, ecommerce, analytics
+│   │   ├── auth/           # login, register, forgot-password, lock-screen
+│   │   ├── pages/          # profile, invoice, pricing, faq, timeline
+│   │   ├── errors/         # 404, 500, maintenance
+│   │   ├── email/          # email templates
+│   │   ├── components/     # buttons, cards, modals, alerts...
+│   │   ├── charts/         # line, bar, pie, mixed
+│   │   ├── tables/         # basic, datatables
+│   │   ├── forms/          # basic, validation, file-upload
+│   │   └── maps/           # leaflet, vector
+│   ├── css/veloadmin.css   # Main stylesheet
+│   └── js/veloadmin.js     # Main JavaScript
+├── routes/web.php          # All 40+ routes
+├── public/                 # Compiled assets (after npm run build)
+└── documentation/          # This file</pre>
+    </div>
+
+    <!-- Theming -->
+    <div class="doc-section" id="theming">
+        <h2><i class="bi bi-palette text-primary me-2"></i>Theming & Colors</h2>
+        <p>All colors are defined as CSS custom properties in <code>resources/css/veloadmin.css</code>. To change the primary color, simply update <code>--va-primary</code>:</p>
+        <pre>:root {
+  --va-primary: #6366f1;      /* Indigo — change this */
+  --va-primary-rgb: 99,102,241;
+  --va-primary-hover: #4f46e5;
+  --va-success: #10b981;
+  --va-danger: #ef4444;
+  --va-warning: #f59e0b;
+  --va-info: #06b6d4;
+}</pre>
+        <div class="alert alert-warning"><i class="bi bi-exclamation-triangle me-2"></i>Always update both <code>--va-primary</code> and <code>--va-primary-rgb</code> together to maintain correct opacity effects.</div>
+    </div>
+
+    <!-- Dark Mode -->
+    <div class="doc-section" id="dark-mode">
+        <h2><i class="bi bi-moon-stars text-primary me-2"></i>Dark Mode</h2>
+        <p>Dark mode is toggled via the moon/sun icon in the topbar. The theme is stored in <code>localStorage</code> under the key <code>va-theme</code>.</p>
+        <p>To default to dark mode, change in <code>resources/views/layouts/app.blade.php</code>:</p>
+        <pre>&lt;html lang="en" data-theme="dark" data-bs-theme="dark"&gt;</pre>
+        <p>Dark mode overrides are defined in <code>veloadmin.css</code> under <code>[data-theme="dark"]</code>.</p>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="doc-section" id="sidebar">
+        <h2><i class="bi bi-layout-sidebar text-primary me-2"></i>Sidebar</h2>
+        <p>The sidebar supports two variants controlled by the <code>data-sidebar</code> attribute on <code>&lt;html&gt;</code>:</p>
+        <table class="table table-bordered">
+            <thead><tr><th>Value</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td><code>dark</code> (default)</td><td>Dark background sidebar</td></tr>
+                <tr><td><code>light</code></td><td>White background sidebar with border</td></tr>
+            </tbody>
+        </table>
+        <pre>&lt;!-- In app.blade.php --&gt;
+&lt;html data-theme="light" data-sidebar="light"&gt;</pre>
+    </div>
+
+    <!-- Dashboards -->
+    <div class="doc-section" id="dashboards">
+        <h2><i class="bi bi-grid-1x2 text-primary me-2"></i>Dashboards</h2>
+        <table class="table table-bordered">
+            <thead><tr><th>Dashboard</th><th>Route</th><th>View</th></tr></thead>
+            <tbody>
+                <tr><td>Sales Management</td><td><code>/</code></td><td><code>dashboard/sales.blade.php</code></td></tr>
+                <tr><td>eCommerce</td><td><code>/dashboard/ecommerce</code></td><td><code>dashboard/ecommerce.blade.php</code></td></tr>
+                <tr><td>Analytics</td><td><code>/dashboard/analytics</code></td><td><code>dashboard/analytics.blade.php</code></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Auth Pages -->
+    <div class="doc-section" id="auth-pages">
+        <h2><i class="bi bi-shield-lock text-primary me-2"></i>Auth Pages</h2>
+        <p>Auth pages use the minimal <code>layouts/auth.blade.php</code> layout (no sidebar/topbar).</p>
+        <table class="table table-bordered">
+            <thead><tr><th>Page</th><th>Route</th></tr></thead>
+            <tbody>
+                <tr><td>Login</td><td><code>/auth/login</code></td></tr>
+                <tr><td>Register</td><td><code>/auth/register</code></td></tr>
+                <tr><td>Forgot Password</td><td><code>/auth/forgot-password</code></td></tr>
+                <tr><td>Lock Screen</td><td><code>/auth/lock-screen</code></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Components -->
+    <div class="doc-section" id="components">
+        <h2><i class="bi bi-layers text-primary me-2"></i>UI Components</h2>
+        <table class="table table-bordered">
+            <thead><tr><th>Component</th><th>Route</th></tr></thead>
+            <tbody>
+                <tr><td>Buttons</td><td><code>/components/buttons</code></td></tr>
+                <tr><td>Cards</td><td><code>/components/cards</code></td></tr>
+                <tr><td>Modals</td><td><code>/components/modals</code></td></tr>
+                <tr><td>Alerts</td><td><code>/components/alerts</code></td></tr>
+                <tr><td>Tabs & Accordions</td><td><code>/components/tabs</code></td></tr>
+                <tr><td>Badges</td><td><code>/components/badges</code></td></tr>
+                <tr><td>Progress & Spinners</td><td><code>/components/progress</code></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Charts -->
+    <div class="doc-section" id="charts">
+        <h2><i class="bi bi-bar-chart-line text-primary me-2"></i>Charts (ApexCharts)</h2>
+        <p>All charts use <a href="https://apexcharts.com" target="_blank">ApexCharts</a> loaded via CDN. Charts auto-adapt colors to the current theme.</p>
+        <table class="table table-bordered">
+            <thead><tr><th>Chart Type</th><th>Route</th></tr></thead>
+            <tbody>
+                <tr><td>Line & Area Charts</td><td><code>/charts/line</code></td></tr>
+                <tr><td>Bar Charts</td><td><code>/charts/bar</code></td></tr>
+                <tr><td>Pie, Donut, Radial</td><td><code>/charts/pie</code></td></tr>
+                <tr><td>Mixed Charts</td><td><code>/charts/mixed</code></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Third-Party -->
+    <div class="doc-section" id="third-party">
+        <h2><i class="bi bi-box-seam text-primary me-2"></i>Third-Party Libraries</h2>
+        <table class="table table-bordered">
+            <thead><tr><th>Library</th><th>Version</th><th>License</th><th>Purpose</th></tr></thead>
+            <tbody>
+                <tr><td>Bootstrap</td><td>5.3.3</td><td>MIT</td><td>CSS Framework</td></tr>
+                <tr><td>Bootstrap Icons</td><td>1.11.3</td><td>MIT</td><td>Icon Font</td></tr>
+                <tr><td>ApexCharts</td><td>3.44</td><td>MIT</td><td>Charts</td></tr>
+                <tr><td>DataTables</td><td>1.13.7</td><td>MIT</td><td>Advanced Tables</td></tr>
+                <tr><td>Leaflet.js</td><td>1.9.4</td><td>BSD-2</td><td>Interactive Maps</td></tr>
+                <tr><td>jsvectormap</td><td>1.5.3</td><td>MIT</td><td>Vector Maps</td></tr>
+                <tr><td>jQuery</td><td>3.7.1</td><td>MIT</td><td>DataTables dependency</td></tr>
+                <tr><td>Inter Font</td><td>—</td><td>OFL</td><td>Typography</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Changelog -->
+    <div class="doc-section" id="changelog">
+        <h2><i class="bi bi-clock-history text-primary me-2"></i>Changelog</h2>
+        <h3>v1.0.0 — April 2026</h3>
+        <ul>
+            <li>Initial release with Laravel 12 + Bootstrap 5.3</li>
+            <li>3 dashboard variants: Sales, eCommerce, Analytics</li>
+            <li>Dark/Light mode with CSS variables</li>
+            <li>40+ pages across all feature categories</li>
+            <li>Full documentation included</li>
+        </ul>
+    </div>
+
+    <!-- Credits -->
+    <div class="doc-section" id="credits">
+        <h2><i class="bi bi-heart text-primary me-2"></i>Credits</h2>
+        <p>Thank you for purchasing VeloAdmin! If you enjoy it, please rate it on ThemeForest ⭐⭐⭐⭐⭐</p>
+        <p>For support, leave a comment on the ThemeForest item page.</p>
+        <p style="color:#94a3b8;font-size:.8125rem">&copy; 2026 VeloAdmin. All rights reserved.</p>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Highlight active nav link on scroll
+document.querySelectorAll('.doc-sidebar a').forEach(a=>{
+    a.addEventListener('click',function(){document.querySelectorAll('.doc-sidebar a').forEach(x=>x.classList.remove('active'));this.classList.add('active')});
+});
+</script>
+</body>
+</html>
